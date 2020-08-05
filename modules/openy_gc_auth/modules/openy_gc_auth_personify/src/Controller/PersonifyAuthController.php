@@ -258,9 +258,7 @@ class PersonifyAuthController extends ControllerBase {
 
     if ($data) {
       $results = json_decode($data['Data'], TRUE);
-      if (isset($results['Table'][0]['Access']) && ($results['Table'][0]['Access'] === 'Approved')) {
-        $isActive = TRUE;
-      }
+      $isActive = (strtolower($results['Table'][0]['Access']) === 'approved') ? TRUE : FALSE;
     }
 
     return $isActive;
