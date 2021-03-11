@@ -35,6 +35,10 @@
     .paragraph-headline__description {
       color: white;
 
+      p {
+        color: white;
+      }
+
       @include median(font-size, 18px, 16px);
 
       p:not(:last-child) {
